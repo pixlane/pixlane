@@ -17,20 +17,20 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; cursor: none; }
 
-.cur { position:fixed; width:7px; height:7px; background:var(--fg); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); }
-.cur-r { position:fixed; width:28px; height:28px; border:1px solid var(--fg); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:.28; }
+.cur { position:fixed; width:10px; height:10px; background:var(--indigo); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition: transform .1s; }
+.cur-r { position:fixed; width:36px; height:36px; border:1.5px solid var(--indigo); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:.4; }
 
 /* NAV */
 nav {
   position:fixed; top:0; left:0; right:0; z-index:100;
   display:flex; align-items:center; justify-content:space-between;
-  padding:0 56px; height:62px;
+  padding:0 56px; height:68px;
   background:rgba(248,247,244,.92); backdrop-filter:blur(18px);
   border-bottom:1px solid var(--line);
 }
 .nav-logo { font-family:var(--mono); font-size:17px; font-weight:500; letter-spacing:.06em; color:var(--fg); text-decoration:none; }
 .nav-mid { display:flex; gap:32px; list-style:none; position:absolute; left:50%; transform:translateX(-50%); }
-.nav-mid a { font-family:var(--mono); font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .2s; }
+.nav-mid a { font-family:var(--mono); font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .2s; }
 .nav-mid a:hover { color:var(--fg); }
 .nav-r { display:flex; align-items:center; gap:14px; }
 .lang-sw { display:flex; border:1px solid var(--line); }
@@ -559,7 +559,7 @@ footer { padding:26px 56px; background:var(--fg); border-top:1px solid rgba(248,
       </div>
       <div class="info-row">
         <span class="info-label" data-tr="E-posta" data-en="Email">E-posta</span>
-        <span class="info-val"><a href="mailto:pixlane@outlook.com">pixlane@outlook.com</a></span>
+        <span class="info-val"><a href="/cdn-cgi/l/email-protection#097960716568676c49667c7d65666662276a6664"><span class="__cf_email__" data-cfemail="e6968f9e8a878883a68993928a89898dc885898b">[email&#160;protected]</span></a></span>
       </div>
       <div class="info-row">
         <span class="info-label" data-tr="Platform" data-en="Platform">Platform</span>
@@ -576,7 +576,7 @@ footer { padding:26px 56px; background:var(--fg); border-top:1px solid rgba(248,
   <section class="contact" id="contact">
     <div class="lbl" data-tr="08 — İletişim" data-en="08 — Contact">08 — İletişim</div>
     <h2 class="contact-h" data-tr="Bir şeyler<br>inşa edelim<br><em>mi?</em>" data-en="Ready to<br><em>build</em><br>something?">Bir şeyler<br>inşa edelim<br><em>mi?</em></h2>
-    <a href="mailto:pixlane@outlook.com" class="contact-mail">pixlane@outlook.com</a>
+    <a href="/cdn-cgi/l/email-protection#42322b3a2e232c27022d37362e2d2d296c212d2f" class="contact-mail"><span class="__cf_email__" data-cfemail="15657c6d79747b70557a6061797a7a7e3b767a78">[email&#160;protected]</span></a>
     <div class="contact-links">
       <a href="https://wa.me/905461323464" target="_blank" class="cl" data-tr="↗ WhatsApp ile yaz" data-en="↗ WhatsApp">↗ WhatsApp ile yaz</a>
       <a href="#" class="cl">↗ Fiverr</a>
@@ -593,8 +593,12 @@ footer { padding:26px 56px; background:var(--fg); border-top:1px solid rgba(248,
   <span>pixlane.co</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ cur.style.transform='translate(-50%,-50%) scale(0)'; curR.style.width='52px'; curR.style.height='52px'; curR.style.opacity='.2'; });
+  el.addEventListener('mouseleave',()=>{ cur.style.transform='translate(-50%,-50%) scale(1)'; curR.style.width='36px'; curR.style.height='36px'; curR.style.opacity='.4'; });
+});
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop);})();
@@ -602,10 +606,4 @@ document.querySelectorAll('.rev').forEach(el=>{
   const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){e[0].target.classList.add('in');o.disconnect();}},{threshold:.06});
   o.observe(el);
 });
-const nav=document.querySelector('nav');
-window.addEventListener('scroll',()=>{nav.style.borderBottomColor=scrollY>30?'rgba(14,14,12,.16)':'rgba(14,14,12,.09)';});
-function setLang(l){
-  document.getElementById('bTR').classList.toggle('on',l==='tr');
-  document.getElementById('bEN').classList.toggle('on',l==='en');
-  document.documentElement.lang=l;
-  document.querySelectorAll('[data-tr]').forEach(el=>{cons
+const nav=document.querySelector
