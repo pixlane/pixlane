@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Site Haritası — Pixlane Studio</title>
+<meta name="description" content="Pixlane Studio sitesinin tüm sayfaları ve bölümleri."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:        #F8FAFC;
+  --bg-card:   #FFFFFF;
+  --border:    #E2E8F0;
+  --text:      #0F172A;
+  --text-2:    #475569;
+  --text-3:    #94A3B8;
+  --indigo:    #6366F1;
+  --indigo-soft: rgba(99,102,241,.08);
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
+html { scroll-behavior:smooth }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--bg); color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration:none; color:inherit }
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 900;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px;
+  background: rgba(248,250,252,.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 13px; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--text);
+}
+.nav-logo-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #A3E635; flex-shrink: 0; margin-left: 1px;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: var(--text-2);
+  transition: color .2s;
+}
+.back-link:hover { color: var(--indigo) }
+
+/* ── PAGE ── */
+.page-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 72px 40px 120px;
+}
+.page-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--indigo);
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.page-eyebrow::after {
+  content: ''; width: 18px; height: 1.5px;
+  background: currentColor; opacity: .5;
+}
+.page-h1 {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800; letter-spacing: -.04em; line-height: .95;
+  color: var(--text); margin-bottom: 14px;
+}
+.page-h1 em { font-style: italic; font-weight: 300; color: var(--text-2) }
+.page-meta {
+  font-size: 13px; color: var(--text-3);
+  margin-bottom: 52px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── SITEMAP GRID ── */
+.sm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Card */
+.sm-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  transition: border-color .25s, box-shadow .25s;
+}
+.sm-card:hover {
+  border-color: rgba(99,102,241,.2);
+  box-shadow: 0 8px 28px rgba(15,23,42,.07);
+}
+.sm-card-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-3);
+  margin-bottom: 14px;
+}
+.sm-card ul {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.sm-card li a {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 14px; font-weight: 500; color: var(--text-2);
+  padding: 8px 10px;
+  border-radius: 9px;
+  transition: background .18s, color .18s;
+}
+.sm-card li a:hover {
+  background: var(--indigo-soft);
+  color: var(--indigo);
+}
+.sm-card li a svg {
+  flex-shrink: 0; opacity: .45;
+  transition: opacity .18s;
+}
+.sm-card li a:hover svg { opacity: 1 }
+.sm-card li a .sm-desc {
+  font-size: 11px; font-weight: 400;
+  color: var(--text-3); margin-left: auto;
+}
+
+/* ── FOOTER ── */
+.mini-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 56px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+}
+.mini-footer-copy { font-size: 12px; color: var(--text-3) }
+.mini-footer-copy strong { color: var(--indigo) }
+.mini-footer-links { display: flex; gap: 20px }
+.mini-footer-links a { font-size: 12px; color: var(--text-3); transition: color .2s }
+.mini-footer-links a:hover { color: var(--text) }
+
+@media(max-width:640px) {
+  .nav { padding: 0 20px }
+  .page-wrap { padding: 48px 20px 80px }
+  .sm-grid { grid-template-columns: 1fr }
+  .mini-footer { padding: 20px; flex-direction: column; text-align: center }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="./index.html" class="nav-logo">
+    PIXLANE<span class="nav-logo-dot"></span>
+  </a>
+  <a href="./index.html" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
+    </svg>
+    Ana Sayfaya Dön
+  </a>
+</nav>
+
+<main class="page-wrap">
+
+  <div class="page-eyebrow">Navigasyon</div>
+  <h1 class="page-h1">Site<br><em>Haritası</em></h1>
+  <p class="page-meta">Pixlane Studio sitesindeki tüm sayfalar ve bölümler</p>
+
+  <div class="sm-grid">
+
+    <!-- Ana Sayfa & Bölümler -->
+    <div class="sm-card">
+      <div class="sm-card-label">Ana Sayfa</div>
+      <ul>
+        <li>
+          <a href="./index.html">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+            Ana Sayfa
+            <span class="sm-desc">index.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="./index.html#services">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/>
+            </svg>
+            Hizmetler
+            <span class="sm-desc">#services</span>
+          </a>
+        </li>
+        <li>
+          <a href="./index.html#process">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+            Süreç
+            <span class="sm-desc">#process</span>
+          </a>
+        </li>
+        <li>
+          <a href="./index.html#pricing">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            Fiyatlandırma
+            <span class="sm-desc">#pricing</span>
+          </a>
+        </li>
+        <li>
+          <a href="./index.html#work">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            Projeler
+            <span class="sm-desc">#work</span>
+          </a>
+        </li>
+        <li>
+          <a href="./index.html#contact">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Projenizi Anlatın
+            <span class="sm-desc">#contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Yasal & İletişim -->
+    <div class="sm-card">
+      <div class="sm-card-label">Yasal &amp; İletişim</div>
+      <ul>
+        <li>
+          <a href="./privacy.html">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Gizlilik Politikası
+            <span class="sm-desc">privacy.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="./sitemap.html">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="3" r="2"/><circle cx="3" cy="21" r="2"/><circle cx="21" cy="21" r="2"/>
+              <path d="M12 5v6M5.5 19.5 12 11l6.5 8.5"/>
+            </svg>
+            Site Haritası
+            <span class="sm-desc">sitemap.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:hello@pixlanestudio.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            hello@pixlanestudio.com
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/905461323464" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- /.sm-grid -->
+
+</main>
+
+<footer class="mini-footer">
+  <div class="mini-footer-copy">© 2025 <strong>Pixlane Studio</strong> · pixlanestudio.com</div>
+  <div class="mini-footer-links">
+    <a href="./index.html">Ana Sayfa</a>
+    <a href="./privacy.html">Gizlilik</a>
+  </div>
+</footer>
+
+</body>
+</html>

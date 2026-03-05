@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Gizlilik Politikası — Pixlane Studio</title>
+<meta name="description" content="Pixlane Studio gizlilik politikası ve kişisel veri işleme bilgilendirmesi."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:        #F8FAFC;
+  --bg-card:   #FFFFFF;
+  --border:    #E2E8F0;
+  --text:      #0F172A;
+  --text-2:    #475569;
+  --text-3:    #94A3B8;
+  --indigo:    #6366F1;
+  --indigo-soft: rgba(99,102,241,.08);
+  --ease: cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0 }
+html { scroll-behavior:smooth }
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: var(--bg); color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration:none; color:inherit }
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 900;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 56px;
+  background: rgba(248,250,252,.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 13px; font-weight: 700; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--text);
+}
+.nav-logo-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #A3E635; flex-shrink: 0; margin-left: 1px;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: var(--text-2);
+  transition: color .2s;
+}
+.back-link:hover { color: var(--indigo) }
+.back-link svg { flex-shrink: 0 }
+
+/* ── PAGE ── */
+.page-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 72px 40px 120px;
+}
+.page-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--indigo);
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.page-eyebrow::after {
+  content: ''; width: 18px; height: 1.5px;
+  background: currentColor; opacity: .5;
+}
+.page-h1 {
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800; letter-spacing: -.04em; line-height: .95;
+  color: var(--text); margin-bottom: 14px;
+}
+.page-h1 em { font-style: italic; font-weight: 300; color: var(--text-2) }
+.page-meta {
+  font-size: 13px; color: var(--text-3);
+  margin-bottom: 52px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── CONTENT ── */
+.section-block {
+  margin-bottom: 44px;
+}
+.section-block h2 {
+  font-size: 17px; font-weight: 800;
+  letter-spacing: -.022em; color: var(--text);
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-block h2::before {
+  content: '';
+  width: 3px; height: 18px;
+  background: var(--indigo);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-block p {
+  font-size: 15px; color: var(--text-2);
+  line-height: 1.82; margin-bottom: 10px;
+}
+.section-block p:last-child { margin-bottom: 0 }
+.section-block ul {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 8px;
+  margin: 10px 0;
+}
+.section-block li {
+  font-size: 15px; color: var(--text-2);
+  line-height: 1.72;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.section-block li::before {
+  content: '–';
+  color: var(--indigo);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-top: 14px;
+}
+.contact-card p {
+  font-size: 14px; color: var(--text-2);
+  line-height: 1.75; margin-bottom: 6px;
+}
+.contact-card p:last-child { margin-bottom: 0 }
+.contact-card a { color: var(--indigo); font-weight: 600 }
+.contact-card a:hover { text-decoration: underline }
+
+/* ── LANG DIVIDER ── */
+.lang-divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 56px 0 44px;
+}
+.lang-divider::before, .lang-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+.lang-divider span {
+  font-size: 10px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--text-3);
+  white-space: nowrap;
+}
+
+/* ── FOOTER ── */
+.mini-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 56px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+}
+.mini-footer-copy {
+  font-size: 12px; color: var(--text-3);
+}
+.mini-footer-copy strong { color: var(--indigo) }
+.mini-footer-links {
+  display: flex; gap: 20px;
+}
+.mini-footer-links a {
+  font-size: 12px; color: var(--text-3);
+  transition: color .2s;
+}
+.mini-footer-links a:hover { color: var(--text) }
+
+@media(max-width:600px) {
+  .nav { padding: 0 20px }
+  .page-wrap { padding: 48px 20px 80px }
+  .mini-footer { padding: 20px; flex-direction: column; text-align: center }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="./index.html" class="nav-logo">
+    PIXLANE<span class="nav-logo-dot"></span>
+  </a>
+  <a href="./index.html" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
+    </svg>
+    Ana Sayfaya Dön
+  </a>
+</nav>
+
+<main class="page-wrap">
+
+  <div class="page-eyebrow">Yasal</div>
+  <h1 class="page-h1">Gizlilik<br><em>Politikası</em></h1>
+  <p class="page-meta">Son güncelleme: Mart 2025 &nbsp;·&nbsp; Pixlane Studio</p>
+
+  <!-- ── TR CONTENT ── -->
+
+  <div class="section-block">
+    <h2>Veri Toplama</h2>
+    <p>
+      Pixlane Studio olarak, web sitemizi ziyaret ettiğinizde veya iletişim formunu doldurduğunuzda bazı kişisel veriler toplayabiliriz. Bu veriler şunlardır:
+    </p>
+    <ul>
+      <li>Ad ve soyad</li>
+      <li>E-posta adresi</li>
+      <li>Proje açıklaması ve talep bilgileri</li>
+      <li>Tahmini bütçe bilgisi (isteğe bağlı olarak paylaşıyorsanız)</li>
+    </ul>
+    <p>
+      Toplanan veriler yalnızca proje değerlendirmesi ve sizinle iletişim kurulması amacıyla kullanılır. Verileriniz asla üçüncü taraflara satılmaz veya pazarlama amacıyla paylaşılmaz.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>Çerezler</h2>
+    <p>
+      Bu web sitesi minimal çerez kullanımına sahiptir. Dil tercihlerinizi hatırlamak için tarayıcı <code style="font-size:13px;background:var(--indigo-soft);padding:1px 6px;border-radius:4px;color:var(--indigo)">localStorage</code> kullanılmaktadır; bu üçüncü taraf bir çerez değildir ve izleme amacı taşımaz.
+    </p>
+    <p>
+      Analitik veya takip amaçlı herhangi bir üçüncü taraf çerezi (Google Analytics, Facebook Pixel vb.) şu an için aktif değildir.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>Üçüncü Taraf Hizmetler</h2>
+    <p>
+      İletişim formu gönderimleri <strong>Formspree</strong> (<a href="https://formspree.io" target="_blank" rel="noopener" style="color:var(--indigo)">formspree.io</a>) aracılığıyla işlenmektedir. Form doldurduğunuzda girdiğiniz veriler Formspree'nin sunucularına iletilir. Formspree'nin kendi gizlilik politikası için <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener" style="color:var(--indigo)">bu sayfayı</a> ziyaret edebilirsiniz.
+    </p>
+    <p>
+      WhatsApp üzerinden iletişim kurulduğunda, Meta'nın gizlilik politikaları geçerlidir. Bu iletişim tamamen isteğe bağlıdır.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>Veri Saklama ve Güvenlik</h2>
+    <p>
+      Toplanan kişisel veriler, proje ilişkisi devam ettiği sürece saklanır. Projenin tamamlanması ve yasal yükümlülüklerin karşılanmasının ardından veriler silinir veya anonimleştirilir.
+    </p>
+    <p>
+      Verilerinizin silinmesini talep etmek için aşağıdaki iletişim bilgilerini kullanabilirsiniz.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>İletişim</h2>
+    <p>Gizlilik politikamız hakkında sorularınız veya veri silme talepleriniz için bizimle iletişime geçebilirsiniz:</p>
+    <div class="contact-card">
+      <p><strong>E-posta:</strong> <a href="mailto:hello@pixlanestudio.com">hello@pixlanestudio.com</a></p>
+      <p><strong>Adres:</strong> Balkapanı Sok. Balkapan Han. No:74, Eminönü / Fatih — İstanbul</p>
+    </div>
+  </div>
+
+  <!-- ── ENGLISH DIVIDER ── -->
+  <div class="lang-divider"><span>English</span></div>
+
+  <!-- ── EN CONTENT ── -->
+
+  <div class="section-block">
+    <h2>Data Collection</h2>
+    <p>
+      At Pixlane Studio, we may collect certain personal data when you visit our website or submit our contact form. This includes:
+    </p>
+    <ul>
+      <li>Full name</li>
+      <li>Email address</li>
+      <li>Project description and inquiry details</li>
+      <li>Estimated budget (if optionally provided)</li>
+    </ul>
+    <p>
+      Collected data is used solely for project evaluation and communication purposes. Your data is never sold or shared with third parties for marketing.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>Cookies</h2>
+    <p>
+      This website has minimal cookie usage. Browser <code style="font-size:13px;background:var(--indigo-soft);padding:1px 6px;border-radius:4px;color:var(--indigo)">localStorage</code> is used to remember your language preference — this is not a third-party cookie and carries no tracking intent.
+    </p>
+    <p>
+      No third-party analytics or tracking cookies (Google Analytics, Facebook Pixel, etc.) are currently active on this site.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>Third-Party Services</h2>
+    <p>
+      Contact form submissions are processed via <strong>Formspree</strong> (<a href="https://formspree.io" target="_blank" rel="noopener" style="color:var(--indigo)">formspree.io</a>). Data you enter in the form is transmitted to Formspree's servers. You can review Formspree's privacy policy at <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener" style="color:var(--indigo)">this link</a>.
+    </p>
+    <p>
+      When communicating via WhatsApp, Meta's privacy policies apply. This communication channel is entirely optional.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>Data Retention &amp; Security</h2>
+    <p>
+      Collected personal data is retained for the duration of the project relationship. Upon project completion and fulfillment of legal obligations, data is deleted or anonymized.
+    </p>
+    <p>
+      To request deletion of your data, please use the contact information below.
+    </p>
+  </div>
+
+  <div class="section-block">
+    <h2>Contact</h2>
+    <p>For questions about our privacy policy or data deletion requests, please reach out:</p>
+    <div class="contact-card">
+      <p><strong>Email:</strong> <a href="mailto:hello@pixlanestudio.com">hello@pixlanestudio.com</a></p>
+      <p><strong>Address:</strong> Balkapanı Sok. Balkapan Han. No:74, Eminönü / Fatih — İstanbul, Turkey</p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="mini-footer">
+  <div class="mini-footer-copy">© 2025 <strong>Pixlane Studio</strong> · pixlanestudio.com</div>
+  <div class="mini-footer-links">
+    <a href="./index.html">Ana Sayfa</a>
+    <a href="./sitemap.html">Site Haritası</a>
+  </div>
+</footer>
+
+</body>
+</html>
